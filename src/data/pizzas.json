@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Margherita",
+      "description": "Mozzarella, domates sosu ve fesleğen.",
+      "price": 25.99,
+      "image": "margherita.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni",
+      "description": "Pepperoni, mozzarella ve domates sosu.",
+      "price": 29.99,
+      "image": "pepperoni.jpg"
+    }
+  ]
+  
