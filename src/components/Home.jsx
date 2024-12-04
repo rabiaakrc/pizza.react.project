@@ -13,7 +13,7 @@ function Home() {
     <div className="home-container">
       <div className="hero">
         <h2 className="title">Teknolojik Yemekler</h2>
-        <p className="subtitle">KOD AÇIKTIRIR PİZZA, DOYURUR</p>
+        <p className="subtitle">KOD AÇIKTIRIR <br></br>PİZZA, DOYURUR</p>
         <button className="order-btn" onClick={handleOrderClick}>
           ACIKTIM
         </button>

@@ -1,11 +1,9 @@
-/* Genel stil reseti */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* OrderPage genel düzeni */
 :root {
   --primary-color: #CE2829;
   --secondary-color: #4CAF50;
@@ -19,16 +17,23 @@
 }
 
 body {
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   margin: 0;
+  background-color: white; /* OrderPage için beyaz arka plan */
 }
 
 .order-page {
-  padding-left: 18rem;
-  padding-right: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-/* OrderPage header */
 .order-header {
   background-color: var(--primary-color);
   color: white;
@@ -37,134 +42,94 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  height: 120px;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  flex-direction: column;
 }
 
-.header-title {
-  font-size: var(--font-size-large);
-  margin: 0;
+.order-header h1 {
+  font-size: 40px;
+  font-weight: inherit;
+  top: 0;
+  left: 0;
 }
 
-.order-nav {
+.order-header nav {
+  margin-top: 30px;
+  margin-right: 300px;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  gap: 15px;
 }
 
-.order-nav .nav-link {
+.link:hover {
+  text-decoration: underline;
+  color: #cccccc;
+}
+
+.link {
   color: white;
   text-decoration: none;
-  margin-left: 15px;
-  margin-right: 15px;
+  font-weight: lighter;
 }
 
-.order-nav .nav-link:hover {
-  text-decoration: underline;
+section.pizza-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10rem 8rem 0 10rem;
+  box-sizing: border-box;
 }
 
-/* Form section */
-.form-section {
-  margin-top: 120px;
-  padding: 20px;
-  flex: 1;
-  overflow: auto;
+section.pizza-info p:first-of-type {
+  text-align: left;
 }
 
-/* Pizza bilgileri */
-.pizza-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.pizza-title {
-  font-size: 32px;
-  margin: 0;
+section.pizza-info p:last-of-type {
+  text-align: right;
 }
 
 .pizza-description {
-  margin: 10px 0;
-}
-
-.pizza-details {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-}
-
-.pizza-price {
-  font-size: var(--font-size-large);
-  font-weight: bold;
-  order: 1;
-}
-
-.pizza-rating {
-  font-size: var(--font-size-medium);
-  color: var(--text-color);
-  text-align: right;
-  order: 2;
-}
-
-.pizza-rating span {
-  margin-left: 5px;
-}
-
-.pizza-rating .reviews {
-  margin-left: 40px;
-}
-
-/* Form stil düzenlemeleri */
-.order-form {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-label {
-  margin-top: 10px;
-  display: inline-block;
-  text-align: left;
+  text-align: left !important;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
-select .kalınselect {
-  font-size: 14px;
-  width: 150px; 
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-label .kalın {
-  width: 25px;
-}
-
-/* Error messages */
 .error {
   color: var(--error-color);
   font-size: var(--font-size-small);
   margin-top: 5px;
 }
 
-/* Quantity control */
 .quantity-control {
   display: flex;
   align-items: center;
   margin-top: 15px;
 }
 
-.quantity-control button {
-  padding: 5px 10px;
-  margin: 0 10px;
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Button styles */
+.quantity-buttons button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #FDC913;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  width: 80px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
 .orderpage-button-container {
   margin-top: 20px;
 }
@@ -181,9 +146,7 @@ label .kalın {
   background-color: #cccccc;
 }
 
-/* Form elemanları */
 input[type="text"],
-input[type="radio"],
 textarea,
 select {
   width: 100%;
@@ -193,163 +156,150 @@ select {
   border-radius: var(--input-radius);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
+input[type="radio"] {
   margin-right: 10px;
-  margin-bottom: 5px;
 }
 
-/* Responsive stil ayarları */
-/* Mobil düzen iyileştirmeleri */
+.malzemeler-bilgi {
+  grid-column: span 3;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.malzeme {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 10px;
+}
+
+.malzeme label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 0;
+}
+
 @media (max-width: 480px) {
   .order-page {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
   }
 
   .pizza-title {
     font-size: 24px;
   }
 
-  .pizza-description {
-    font-size: 12px;
-  }
-
   .order-nav {
     flex-direction: column;
-    align-items: center;
   }
 
-  .order-nav .nav-link {
+  .nav-link {
     margin: 5px 0;
   }
-
-  .order-header {
-    padding: 15px;
-  }
-
-  .pizza-price {
-    font-size: 18px;
-  }
-
-  .pizza-rating {
-    font-size: 14px;
-  }
-
-  /* Ek malzemeler grid düzeni */
-  .malzemeler {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
-/* Selection group */
 .selection-group {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
-.selection-group label {
-  width: 50%; 
+label.kalın {
+  margin: 0;
+  padding: 0;
+  flex: 1;
 }
 
-.kalınselect {
-  width: 100%;
-}
-
-/* Radio butonlar */
-.selection-group fieldset {
+.toplambuton {
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  width: 150px;
-  border: none;
+  align-items: flex-end;
+  margin-top: 20px;
+  padding: 10px 0;
+  width: 50%;
+  text-align: right;
+  border: 2px solid #dbd8d1;
+  border-radius: 5px;
+  margin-left: auto;
 }
 
-.filtered .selection-group fieldset {
-  border: none;
-}
-
-.selection-group input[type="radio"] {
-  margin-bottom: 5px; 
-  width: 20px; 
-  height: 20px; 
-  margin-right: 10px;
-}
-
-.selection-group fieldset label {
-  margin-bottom: 5px;
-  display: block;
-}
-
-.selection-group fieldset legend {
-  font-size: 20px; 
-  margin-bottom: 10px;
-}
-
-.oranlegend {
-  text-align: left;
-  width: 100%; 
-  font-size: 20px;
-}
-
-/* Hamur Seçimi */
-.kalın {
-  font-size: 18px; 
-  font-weight: bold; 
-  margin-bottom: 10px; 
-}
-
-select .kalınselect {
-  font-size: 18px;
-  font-weight: bold; 
-  margin-bottom: 10px; 
-}
-
-/* Ek Malzemeler */
-.extra-ingredients-info {
-  margin-top: 10px;
-  font-size: var(--font-size-medium);
-  font-weight: bold;
-  color: var(--text-color);
+.toplambuton p,
+.toplamprag,
+.toplambuton h2 {
+  margin: 0 0 10px 0;
+  width: 100%;
   text-align: center;
 }
 
-.malzemeler {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) repeat(1, 1fr);
-  grid-gap: 10px;
+.toplamprag {
+  color: #CE2829;
+  font-weight: bold;
 }
 
-.malzemeler label {
+.orderpage-button {
+  background-color: #FDC913;
+  width: 300px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+fieldset.size {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0;
+  border: none;
+  margin-top: 20px;
+}
+
+fieldset.size label {
   display: flex;
   align-items: center;
 }
 
-.malzemeler:nth-child(1),
-.malzemeler:nth-child(2) {
-  grid-template-columns: repeat(5, 1fr);
+fieldset.size input[type="radio"] {
+  margin-left: 0;
+  margin-bottom: 5px;
 }
 
-.malzemeler:nth-child(3) {
-  grid-template-columns: repeat(4, 1fr);
+fieldset.size select {
+  padding: 10px;
+  margin-left: 10px;
 }
 
-.malzeme-bilgi {
-  grid-column: 1 / -1;
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 10px;
+.order-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.yazikucuk {
-  font-size: 15px;
-}
-
-.malzemeler legend {
-  text-align: left;
+.fieldset-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  font-size: 20px;
+  gap: 20px;
+}
+
+.labelsize {
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.orderpage-button {
+  width: 100%;
+  padding: 12px;
 }

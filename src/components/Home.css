@@ -24,15 +24,21 @@
 }
 
 .title {
-  font-size: 3rem;
-  color: #FAF7F2;
-  z-index: 1; 
-}
-
-.subtitle {
   font-size: 1.5rem;
   color: #FAF7F2;
   z-index: 1; 
+  margin-top: 80px;
+  font-weight:bold;
+}
+
+.subtitle {
+  font-size: 3rem;
+  color: #FAF7F2;
+  z-index: 1;
+  margin-top: 20px;
+  font-weight: lighter;
+  
+
 }
 
 .order-btn {
@@ -44,6 +50,7 @@
   z-index: 1;
   border: none;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 
